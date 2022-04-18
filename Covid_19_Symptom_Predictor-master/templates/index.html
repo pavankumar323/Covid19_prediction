@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="{{ url_for('static', filename = 'Images/Icon.jpg') }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <title>COVID-19 Symptom Predictor</title>
+</head>
+<style>
+  .navbar {
+    background-color: black;
+    height: 75px;
+  }
+
+  .navbar a:hover{
+    color: white;
+    background-color: red;
+  }
+
+  .navbar a {
+    color: white;
+  }
+
+</style>
+<body>
+
+  <nav class="navbar navbar-expand-100g">
+    <a class="navbar-brand" href="#">COVID-19 Symptom Predictor</a>
+    <a class="navbar-brand" href="https://covid-19-data-status.herokuapp.com/">Home</a>
+  </nav>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="container">
+
+    <form action="/" method="POST">
+      <div class="form-group">
+        <label for="fever">Enter Fever Value</label>
+        <input type="text" class="form-control" id="fever" name="fever" placeholder="Enter Fever Value" required>
+      </div>
+
+      <div class="form-group">
+        <label for="age">Enter Your Age</label>
+        <input type="text" class="form-control" id="age" name="age" placeholder="Enter Your Age" required>
+      </div>
+
+      <div class="form-group">
+        <label for="pain">Body Pain</label>
+        <select class="custom-select" name="pain" id="pain" required>
+          <option value="0">No Pain</option>
+          <option value="1">Severe Pain</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="runnyNose">Runny Nose</label>
+        <select class="custom-select" name="runnyNose" id="runnyNose" required>
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="diffBreath">Breathing Difficulty</label>
+        <select class="custom-select" name="diffBreath" id="diffBreath" required>
+          <option value="-1">No Difficulty</option>
+          <option value="0">Little Difficulty</option>
+          <option value="1">Severe Difficulty</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary"> Submit </button>
+    </form>
+  </div>
+</body>
+
+</html>

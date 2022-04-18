@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="{{ url_for('static', filename = 'Images/Icon.jpg') }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+  <title>COVID-19 Symptom Predictor</title>
+</head>
+
+<style>
+  .navbar {
+    background-color: black;
+    height: 75px;
+  }
+
+  .navbar a:hover{
+    color: white;
+    background-color: red;
+  }
+
+  .navbar a {
+    color: white;
+  }
+
+</style>
+
+<body>
+
+  <nav class="navbar navbar-expand-100g">
+    <a class="navbar-brand" href="#">COVID-19 Symptom Predictor</a>
+    <a class="navbar-brand" href="https://covid-19-data-status.herokuapp.com/">Home</a>
+  </nav>
+  <div class="container">
+    
+    <!-- <h1> Patient's Probability of Infection(Covid +ve) is {{'%2.f'%inf}}%.</h1> -->
+    {% if inf >= 50%}
+      <img src = './../static/Images/+ve.png'>
+      <h1 style="color:red">You are most likely to be Covid Positive</h1>
+      <br>
+      <h1>Please follow the Safety Measures</h1>
+      <h1>Get Well Soon</h1>
+
+    {% else %}
+      <img src = './../static/Images/negative.jpg'>
+      <h1 style="color:green">You are most likely to be Covid Negative</h1>  
+      <h1>Stay Safe</h1>
+    {% endif %}
+    <p> Thanks for Using COVID Symptom Predictor </p>
+    <a href="/">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Go Back</button>
+    </a>
+  </div>
+
+</body>
+
+</html>
